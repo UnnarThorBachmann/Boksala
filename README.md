@@ -1,6 +1,6 @@
 24th of June 2016
 
-#Boksolublogg
+# Book sale page
 
 This is a project done by Unnar Thor Bachmann in the Udacity's full stack web developer nanodegree program. This is a multiuser blog page. Each user can read and like the blogs of other users as well as edit and delete their own. Each user has to signup and log into to access the blogs. For any unsuspected usage of the system the user is directed to the login page.
 
