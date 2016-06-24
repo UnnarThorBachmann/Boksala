@@ -1,0 +1,35 @@
+{%extends "base.html"%}
+{%block content%}
+<h1 class="blogg">{{blog.title}}</h1>
+<div>
+<p class="blogg">{{blog.text}}
+<form method="post" action="/blog/{{id_str}}">
+      <button name="liked" type="submit" class="btn btn-primary">Like</button>
+      <button name="edited" type="submit" class="btn btn-primary {{edit}}">edit</button>
+      <button name="deleted" type="submit" class="btn btn-primary {{delete}}">delete</button>
+    </form>
+</div>
+</p>
+
+<ul class="list-group">
+  <li class="list-group-item">
+      <p class="list-group-item-text">Likes <span class="badge">{{like_cnt}}</span>:  {{like_str}}
+      </p>
+  </li>
+  {%for comment,user in users_comments%}
+  <li class="list-group-item">
+      <h4 class="list-group-item-heading">{{user}} says</h4>
+      <p class="list-group-item-text">{{comment}}</p>
+  </li>
+  {%endfor%}
+</ul>
+<form method="post" action="/blog/{{id_str}}">
+      <div class="form-group">
+      <label>Add comment</label>
+       <textarea  rows="2" cols="50" class="form-control" name="text">{{text}}</textarea>
+      </div>
+      <div class="error">{{error}}</div>
+      <button name="comment" type="submit" class="btn btn-primary">Post</button>
+    </form>
+</div>
+{%endblock%}

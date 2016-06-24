@@ -1,0 +1,9 @@
+{%extends "base.html"%}
+{%block content%}
+    <h1>Blogs</h1>
+    <div class="list-group">
+    {%for blog in blogs%}
+      <a class="list-group-item wide" href="/blog/{{blog.key().id()}}">{{blog.title}} <sub>created by {{blog.owner}}</sub><span class="badge">{{blog.created.date()}}</span></a>
+    {% endfor %}
+    </div>
+{%endblock%}

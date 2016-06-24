@@ -1,0 +1,22 @@
+{%extends "base.html"%}
+{%block content%}
+    <h1>New post</h1>
+    <form method="post" action="\newpost">
+      <div class="form-group">
+      <label>title</label>
+      <input class="form-control" type="text" name="title" value ="{{title}}">
+      </div>
+      <div class="form-group">
+      <label>blog</label>
+       <textarea  rows="10" cols="100" class="form-control" name="text">{{text}}</textarea>
+      </div>
+      <div class="error">{{error}}</div>
+      <button type="submit" class="btn btn-default">Submit</button>
+    </form>
+    <h1>Blogs</h1>
+    <div class="list-group">
+    {%for blog in blogs%}
+      <a class="list-group-item" href="/blog/{{blog.key().id()}}">{{blog.title}}</a>
+    {% endfor %}
+    </div>
+{%endblock%}

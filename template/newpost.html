@@ -1,0 +1,17 @@
+{%extends "base.html"%}
+{%block content%}
+    <h1>{{greeting}}</h1>
+    <form method="post"  action="/{{action}}">
+      <div class="form-group">
+      <label>title</label>
+      <input class="form-control" type="text" name="title" value ="{{title}}">
+      </div>
+      <div class="form-group">
+      <label>blog</label>
+       <textarea  rows="10" cols="100" class="form-control" name="text">{{text}}</textarea>
+      </div>
+      <div class="error">{{error}}</div>
+      <button name="edit" type="submit" class="btn btn-primary">{{post}}</button>
+      <button name="cancel" type="submit" class="btn btn-primary {{cancel}}">Cancel</button>
+    </form>
+{%endblock%}
